@@ -1,5 +1,14 @@
+import view.LoginWindow;
+
+import javax.swing.*;
+
 public class main {
     public static void main(String[] args) {
-        System.out.println("First code...");
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new LoginWindow();
+            }
+        });
     }
 }
