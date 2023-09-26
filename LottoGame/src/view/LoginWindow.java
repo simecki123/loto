@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class LoginWindow extends JFrame {
+    private MainFrame mainFrame;
 
     private JPanel loginPanel;
     private JPanel registerPanel;
@@ -55,6 +56,9 @@ public class LoginWindow extends JFrame {
     }
 
     private void initAll() {
+        mainFrame = new MainFrame();
+        mainFrame.setVisible(false);
+
         loginPanel = new JPanel();
         loginButton = new JButton("LOGIN");
         registerButton = new JButton("REGISTER");
@@ -186,6 +190,13 @@ public class LoginWindow extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 cardLayout.next(cpane);
+            }
+        });
+
+        loginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mainFrame.setVisible(true);
             }
         });
     }
